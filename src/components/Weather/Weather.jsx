@@ -10,7 +10,7 @@ const Weather = () => {
 
 	useEffect(() => {
 		fetch(
-			"https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=29b7258e80a9acb96e03125589193c9d"
+			"https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid={api_key}"
 		)
 			.then((response) => response.json())
 			.then((res) => {
