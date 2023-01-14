@@ -1,0 +1,16 @@
+.container {
+	display: flex;
+	color: white;
+	justify-content: space-between;
+	padding-left: 80px;
+}
+
+.left {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.right hr {
+	width: 430px;
+}

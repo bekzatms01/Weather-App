@@ -1,0 +1,13 @@
+.cities {
+	margin: 60px 0;
+}
+
+.popular-city {
+	margin-bottom: 30px;
+	letter-spacing: 2px;
+	font-size: 18px;
+}
+
+.popular-city:last-child {
+	margin-bottom: 0;
+}
