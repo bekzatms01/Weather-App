@@ -4,11 +4,11 @@ import "./cities.css";
 
 const cities = ["New York", "London", "Paris", "Astana"];
 
-const PopularCities = () => {
+const PopularCities = ({ getData }) => {
 	return (
 		<div className="cities">
 			{cities.map((item, idx) => {
-				return <City city={item} key={idx} />;
+				return <City city={item} key={idx} getData={getData} />;
 			})}
 		</div>
 	);

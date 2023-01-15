@@ -2,14 +2,25 @@ import React from "react";
 import "./weather-info.css";
 
 const WeatherInfo = ({ data }) => {
+	const getDate = () => {
+		let options = {
+			weekday: "long",
+			year: "numeric",
+			month: "long",
+			day: "numeric",
+		};
+		let today = new Date();
+		let ans = today.toLocaleDateString("en-US", options);
+		return ans;
+	};
 	return (
 		<>
 			{data && (
 				<>
 					<div className="temp">{Math.floor(data.main.temp)}&#176;</div>
 					<div className="location">
-						<div className="city">London</div>
-						<div className="date">06:09 - Monday,9 Sep '19</div>
+						<div className="city">{data.name}</div>
+						<div className="date">{getDate()}</div>
 					</div>
 					<div className="main-info">
 						<div className="icon">

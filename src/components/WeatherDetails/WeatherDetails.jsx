@@ -5,18 +5,21 @@ const WeatherDetails = ({ data }) => {
 	return (
 		<div className="details">
 			<h2>Weather Details</h2>
+			{data.clouds.all > 0 && (
+				<div className="detail">
+					<h3>Clouds</h3>
+					<p>{data.clouds.all}%</p>
+				</div>
+			)}
+
 			<div className="detail">
-				<h3 className="title">{data.weather[0].main}</h3>
-				<p className="percent">{data.clouds.all}%</p>
-			</div>
-			<div className="detail">
-				<h3 className="title">Humidity</h3>
-				<p className="percent">{data.main.humidity}%</p>
+				<h3>Humidity</h3>
+				<p>{data.main.humidity}%</p>
 			</div>
 
 			<div className="detail">
-				<h3 className="title">Wind</h3>
-				<p className="percent">{Math.floor(data.wind.speed)}km/h</p>
+				<h3>Wind</h3>
+				<p>{Math.floor(data.wind.speed)}km/h</p>
 			</div>
 		</div>
 	);
