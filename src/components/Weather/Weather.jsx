@@ -17,9 +17,13 @@ const Weather = () => {
 		)
 			.then((response) => response.json())
 			.then((res) => {
-				console.log(res);
-				setData(res);
-				getDataOfNextDays(res.id);
+				if (res.cod === "404") {
+					alert(res.message);
+				} else {
+					console.log(res);
+					setData(res);
+					getDataOfNextDays(res.id);
+				}
 			});
 	};
 
@@ -40,6 +44,7 @@ const Weather = () => {
 	useEffect(() => {
 		getData("Almaty");
 	}, []);
+
 	const searchHandler = () => {
 		getData(query);
 		setQuery("");
@@ -47,9 +52,7 @@ const Weather = () => {
 
 	return (
 		<div className="container">
-			<div className="left">
-				<WeatherInfo data={data} />
-			</div>
+			<div className="left">{data && <WeatherInfo data={data} />}</div>
 
 			<div className="right">
 				<Search
